@@ -1,0 +1,50 @@
+.board {
+  @cell-size: 20px;
+  @grid-color: #DDD;
+
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+
+  &__grid-row {
+    display: flex;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: @grid-color;
+    height: @cell-size;
+    box-sizing: border-box;
+    &:last-child {
+      border-width: 1px 0 1px 0;
+    }
+  }
+
+  &__grid-cell {
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: @grid-color;
+    width: @cell-size;
+    box-sizing: border-box;
+    &:last-child {
+      border-width: 0 1px 0 1px;
+    }
+  }
+
+  &__object {
+    width: @cell-size;
+    height: @cell-size;
+    position: absolute;
+    border-radius: 50%;
+
+    &_food {
+      background-color: green;
+    }
+
+    &_bomb {
+      background-color: red;
+    }
+
+    &_snake {
+      background-color: gray;
+    }
+  }
+}
